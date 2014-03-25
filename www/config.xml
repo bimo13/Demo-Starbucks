@@ -53,9 +53,9 @@
 			<gap:splash src="res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
 			
 			<!-- URL Scheme plugin. -->
-			<gap:plugin name="nl.x-services.plugins.launchmyapp">
+			<!--<gap:plugin name="nl.x-services.plugins.launchmyapp">
 				<param name="URL_SCHEME" value="dmstarbucks" />
-			</gap:plugin>
+			</gap:plugin>-->
 			<!-- InApp Browser plugin. -->
 			<gap:plugin name="org.apache.cordova.core.inappbrowser" />
 			
