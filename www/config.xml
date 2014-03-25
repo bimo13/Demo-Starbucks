@@ -57,6 +57,6 @@
 				<param name="URL_SCHEME" value="dmstarbucks" />
 			</gap:plugin>
 			<!-- InApp Browser plugin. -->
-			<gap:plugin name="org.apache.cordova.inappbrowser" />
+			<gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3" />
 			
 </widget>
