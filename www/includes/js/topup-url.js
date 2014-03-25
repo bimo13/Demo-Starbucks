@@ -1,2 +1,2 @@
-var pathname = window.location.href;
-alert(pathname);
+var URL = $(location).attr('href');
+alert(URL);
