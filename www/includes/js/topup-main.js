@@ -40,12 +40,15 @@ function processTopup(amt){
 		// URL
 		//
 		"http://demo.totalindo.net/demo-starbucks/web-service/topup-add.php",
+		// Data POST
+		//
+		{
+			amt: amt
+		},
 		// When Succeeded
 		//
 		function(data){
 			if(data['status'] != 1){
-				
-			}else{
 				$("#myDialogs").empty();
 				$("#myDialogs").html("<div class=\"text-danger\">Error !</div>");
 				
@@ -67,6 +70,35 @@ function processTopup(amt){
 				
 				$("#button-DialogYes").addClass("hide");
 				$("#button-DialogNo").addClass("hide");
+				
+				$("#pleasewait").modal('hide');
+				$("#AppDialogs").modal();
+			}else{
+				$("#myDialogs").empty();
+				$("#myDialogs").html("<div class=\"text-success\">Success</div>");
+				
+				$("#myDialogsText").removeClass("alert-success alert-info alert-warning alert-danger");
+				$("#myDialogsText").addClass("alert-success");
+				$("#myDialogsText").html("You request for credits top-up for Rp. "+amt+" has been sent.<br />Would you like to proceed to online-payment ?");
+				
+				$("#button-DialogYes").removeClass("btn-info btn-danger btn-warning btn-primary hide");
+				$("#button-DialogNo").removeClass("hide");
+				$("#button-DialogClose").removeClass("hide");
+				
+				$("#button-DialogYes").unbind();
+				$("#button-DialogNo").unbind();
+				$("#button-DialogClose").unbind();
+				
+				$("#button-DialogYes").addClass("btn-success");
+				$("#button-DialogYes").bind("click", function(){
+					window.location.href="top-up-payment.html?id="+data['return_data']['tu_id']+"&refs="+data['return_data']['tu_refs'];
+				});
+				
+				$("#button-DialogNo").bind("click", function(){
+					window.location.href="top-up-finish.html";
+				});
+				
+				$("#button-DialogClose").addClass("hide");
 				
 				$("#pleasewait").modal('hide');
 				$("#AppDialogs").modal();
