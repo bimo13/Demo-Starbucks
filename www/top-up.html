@@ -12,7 +12,7 @@
     	<link href="includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         
         <!-- Custom styles for index.html -->
-    	<link href="includes/css/p-main-page.css" rel="stylesheet">
+    	<link href="includes/css/p-top-up.css" rel="stylesheet">
         <link href="includes/css/dialogs.css" rel="stylesheet">
         
         <!-- Bootstrap core CSS -->
@@ -39,46 +39,24 @@
             </div>
         </nav>
         
-        <div class="container">
+    	<div class="container">
         	
-            <div class="row text-center">
-            	<div class="col-md-4 col-sm-12">
-                	<a href="javascript:void(0);" class="thumbnail">
-                        <img src="images/sb-qr.png" />
-                        <div class="caption">Your Profile</div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                	<a href="top-up.html" class="thumbnail">
-                        <img src="images/sb-top.png" />
-                        <div class="caption">Top-Up Credits</div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                	<a href="javascript:void(0);" onclick="window.open('http://www.starbucks.co.id/', '_system');" class="thumbnail">
-                        <img src="images/logo.png" />
-                        <div class="caption">Starbucks.co.id</div>
-                    </a>
-                </div>
+        	<div class="panel panel-default">
+            	<div class="panel-heading">CREDITS TOP-UP</div>
+                <div class="panel-body">Please select amount for top-up.</div>
             </div>
             
-        	<div class="row text-center">
-            	<div class="col-md-4 col-sm-12">
-                	<a href="javascript:void(0);" class="thumbnail" onClick="logout();">
-                        <img src="images/sb-logout.png" />
-                        <div class="caption">Sign out</div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                	&nbsp;
-                </div>
-                <div class="col-md-4 col-sm-12">
-                	&nbsp;
-                </div>
-            </div>
+            <button type="button" class="btn btn-info btn-lg btn-block">Rp. 50.000,-</button>
+            <button type="button" class="btn btn-info btn-lg btn-block">Rp. 100.000,-</button>
+            <button type="button" class="btn btn-info btn-lg btn-block">Rp. 150.000,-</button>
+            <button type="button" class="btn btn-info btn-lg btn-block">Rp. 200.000,-</button>
+            <button type="button" class="btn btn-info btn-lg btn-block">Rp. 250.000,-</button>
+            <hr />
+            <button type="button" class="btn btn-default btn-lg btn-block" onClick="window.location.href='main-page.html';">Main Page <span class="glyphicon glyphicon-chevron-right"></span></button>
+            <button type="button" class="btn btn-default btn-lg btn-block" onClick="logout();">Sign Out <span class="glyphicon glyphicon-chevron-right"></span></button>
             
         </div>
-        
+		
         <!-- Dialogs -->
         <div class="modal fade" id="AppDialogs" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myDialogs" aria-hidden="true">
         	<div class="modal-dialog">
@@ -112,7 +90,7 @@
             </div>
         </div>
         
-        <script src="cordova.js" type="text/javascript"></script>
+		<script src="cordova.js" type="text/javascript"></script>
         <script src="includes/js/jquery-1.11.0.min.js" type="text/javascript"></script>
         <script src="includes/js/jquery.validate.min.js" type="text/javascript"></script>
         <script src="includes/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
