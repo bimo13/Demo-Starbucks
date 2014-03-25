@@ -7,7 +7,7 @@ function submitLogin(){
 	$.post(
 		// URL
 		//
-		"http://demo.totalindo.net/FMCG-1.01/web-service/login-service.php",
+		"http://demo.totalindo.net/demo-starbucks/web-service/us-login.php",
 		// Data POST
 		//
 		{
@@ -18,12 +18,30 @@ function submitLogin(){
 		//
 		function(data){
 			if(data['status'] != 1){
-				$("#pleasewait").modal('hide');
+				$("#myDialogs").empty();
+				$("#myDialogs").html("<div class=\"text-danger\">Error !</div>");
 				
-				$(".messages").addClass('bg-danger');
-				$(".text-messages").empty();
-				$(".text-messages").addClass('text-danger');
-				$(".text-messages").append(data['message']);
+				$("#myDialogsText").removeClass("alert-success alert-info alert-warning alert-danger");
+				$("#myDialogsText").addClass("alert-danger");
+				$("#myDialogsText").html(data['message']);
+				
+				$("#button-DialogYes").removeClass("btn-info btn-danger btn-warning btn-primary hide");
+				$("#button-DialogNo").removeClass("hide");
+				$("#button-DialogClose").removeClass("hide");
+				
+				$("#button-DialogYes").unbind();
+				$("#button-DialogNo").unbind();
+				$("#button-DialogClose").unbind();
+				
+				$("#button-DialogClose").bind("click", function(){
+					$("#AppDialogs").modal("hide");
+				});
+				
+				$("#button-DialogYes").addClass("hide");
+				$("#button-DialogNo").addClass("hide");
+				
+				$("#pleasewait").modal('hide');
+				$("#AppDialogs").modal();
 			}else{
 				setTimeout(function(){
 					$("#pleasewait").modal('hide');
@@ -33,4 +51,5 @@ function submitLogin(){
 		},
 		"json"
 	);
+	
 }

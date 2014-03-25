@@ -12,7 +12,7 @@
     	<link href="includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         
         <!-- Custom styles for index.html -->
-    	<link href="includes/css/p-index.css" rel="stylesheet">
+    	<link href="includes/css/p-main-page.css" rel="stylesheet">
         <link href="includes/css/dialogs.css" rel="stylesheet">
         
         <!-- Bootstrap core CSS -->
@@ -31,23 +31,51 @@
 	
     <body>
     	
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="javascript:void(0);">STARBUCKS</a>
+                </div>
+            </div>
+        </nav>
+        
         <div class="container">
+        	
+            <div class="row text-center">
+            	<div class="col-md-4 col-sm-12">
+                	<a href="javascript:void(0);" class="thumbnail">
+                        <img src="images/sb-qr.png" />
+                        <div class="caption">Your QR</div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                	<a href="javascript:void(0);" class="thumbnail">
+                        <img src="images/sb-top.png" />
+                        <div class="caption">Top-Up Credits</div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                	<a href="http://starbucks.co.id/" class="thumbnail">
+                        <img src="images/logo.png" />
+                        <div class="caption">Starbucks.com</div>
+                    </a>
+                </div>
+            </div>
             
-            <form class="form-signin" role="form" id="form-signin" autocomplete="off">
-            	
-				<h3 class="form-signin-heading text-center"><img src="images/logo.png" /></h3>
-                
-                <div class="form-group">
-                    <input name="username" id="username" type="text" class="form-control" placeholder="Username" required autofocus>
-              </div>
-                
-                <div class="form-group">
-                	<input name="password" id="password" type="password" class="form-control" placeholder="Password" required>
-              </div>
-                
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                
-            </form>
+        	<div class="row text-center">
+            	<div class="col-md-4 col-sm-12">
+                	<a href="javascript:void(0);" class="thumbnail" onClick="logout();">
+                        <img src="images/sb-logout.png" />
+                        <div class="caption">Sign out</div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                	&nbsp;
+                </div>
+                <div class="col-md-4 col-sm-12">
+                	&nbsp;
+                </div>
+            </div>
             
         </div>
         
@@ -89,17 +117,7 @@
         <script src="includes/js/jquery.validate.min.js" type="text/javascript"></script>
         <script src="includes/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         
-        <script src="includes/js/index-form-signin.js"></script>
-        <script src="includes/js/index-submit-signin.js"></script>
-        
-		<script type="text/javascript">
-			// this is for the LaunchMyApp plugin
-			function handleOpenURL(url) {
-				setTimeout(function() {
-					alert("LaunchMyApp plugin received url: " + url);
-				}, 0);
-			}
-        </script>
+        <script src="includes/js/glob-func-logout.js"></script>
         
     </body>
     
