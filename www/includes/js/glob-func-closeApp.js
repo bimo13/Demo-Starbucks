@@ -6,7 +6,7 @@ document.addEventListener('deviceready', function(){
 //Dialog popup
 function ShowExitDialog(){
 	$("#myDialogs").empty();
-	$("#myDialogs").html("<div class=\"text-danger\">Close Application</div>");
+	$("#myDialogs").html("<div class=\"text-warning\">Close Application</div>");
 	
 	$("#myDialogsText").removeClass("alert-success alert-info alert-warning alert-danger");
 	$("#myDialogsText").addClass("alert-warning");

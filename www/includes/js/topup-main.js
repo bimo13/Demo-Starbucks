@@ -79,7 +79,7 @@ function processTopup(amt){
 				
 				$("#myDialogsText").removeClass("alert-success alert-info alert-warning alert-danger");
 				$("#myDialogsText").addClass("alert-success");
-				$("#myDialogsText").html("You request for credits top-up for Rp. "+amt+" has been sent.<br />Would you like to proceed to online-payment ?");
+				$("#myDialogsText").html(data['message']);
 				
 				$("#button-DialogYes").removeClass("btn-info btn-danger btn-warning btn-primary hide");
 				$("#button-DialogNo").removeClass("hide");
@@ -91,7 +91,7 @@ function processTopup(amt){
 				
 				$("#button-DialogYes").addClass("btn-success");
 				$("#button-DialogYes").bind("click", function(){
-					window.location.href="top-up-payment.html?id="+data['return_data']['tu_id']+"&refs="+data['return_data']['tu_refs'];
+					window.location.href="top-up-payment.html?id="+data['return_data']['tu_id']+"&amt="+data['return_data']['tu_amt']+"&refs="+data['return_data']['tu_refs'];
 				});
 				
 				$("#button-DialogNo").bind("click", function(){
