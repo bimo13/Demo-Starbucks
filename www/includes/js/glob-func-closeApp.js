@@ -26,10 +26,10 @@ function ShowExitDialog(){
 	});
 	
 	$("#button-DialogNo").bind("click", function(){
-		$("#FMCGDialogs").modal("hide");
+		$("#AppDialogs").modal("hide");
 	});
 	
 	$("#button-DialogClose").addClass("hide");
 	
-	$("#FMCGDialogs").modal();
+	$("#AppDialogs").modal();
 }
