@@ -1,2 +1,2 @@
-var pathname = window.location.pathname;
+var pathname = window.location.href;
 alert(pathname);
