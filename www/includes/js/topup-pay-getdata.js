@@ -50,12 +50,11 @@ function GetUserData(){
 				$("#pleasewait").modal("hide");
 				$("#AppDialogs").modal();
 			}else{
-				$("#pleasewait").modal("hide");
 				$("#top-username").val(data['return_data']['username']);
 				$("#top-amt").val(topup_amt);
 				$("#top-refs").val(topup_refs);
-				$("#payment-id").val(topup_id);
-				$("#payment-refs").val(topup_refs);
+				$("#top-proceed").attr("href","http://demo.totalindo.net/demo-starbucks/web-service/payment-process.php?id="+topup_id+"&refs="+topup_refs);
+				$("#pleasewait").modal("hide");
 			}
 		},
 		"json"
