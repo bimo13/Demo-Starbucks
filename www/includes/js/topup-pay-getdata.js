@@ -53,7 +53,9 @@ function GetUserData(){
 				$("#top-username").val(data['return_data']['username']);
 				$("#top-amt").val(topup_amt);
 				$("#top-refs").val(topup_refs);
-				$("#top-proceed").attr("href","http://demo.totalindo.net/demo-starbucks/web-service/payment-process.php?id="+topup_id+"&refs="+topup_refs);
+				$("#top-proceed").bind("click", function(){
+					window.open("http://demo.totalindo.net/demo-starbucks/web-service/payment-process.php?id="+topup_id+"&refs="+topup_refs, "_system");
+				});
 				$("#pleasewait").modal("hide");
 			}
 		},
