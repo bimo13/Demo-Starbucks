@@ -97,9 +97,26 @@
 		<script type="text/javascript">
 			// this is for the LaunchMyApp plugin
 			function handleOpenURL(url) {
+				
+				function GetURLParameter(sParam){
+					var sPageURL = url.search.substring(1);
+					var sURLVariables = sPageURL.split("&");
+					for(var i=0; i < sURLVariables.length; i++){
+						var sParameterName = sURLVariables[i].split("=");
+						if(sParameterName[0] == sParam){
+							return sParameterName[1];
+						}
+					}
+				}
+				
+				var topup_id		=	GetURLParameter("id");
+				var topup_refs		=	GetURLParameter("refs");
+				var topup_status	=	GetURLParameter("success");
+				
 				setTimeout(function() {
-					alert("LaunchMyApp plugin received url: " + url);
+					alert("LaunchMyApp plugin received url: " + url + " params : " + topup_refs);
 				}, 0);
+				
 			}
         </script>
         

@@ -54,6 +54,8 @@ function GetUserData(){
 				$("#top-username").val(data['return_data']['username']);
 				$("#top-amt").val(topup_amt);
 				$("#top-refs").val(topup_refs);
+				$("#payment-id").val(topup_id);
+				$("#payment-refs").val(topup_refs);
 			}
 		},
 		"json"
