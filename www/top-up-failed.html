@@ -12,7 +12,7 @@
     	<link href="includes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         
         <!-- Custom styles for index.html -->
-    	<link href="includes/css/p-index.css" rel="stylesheet">
+    	<link href="includes/css/p-top-up-result.css" rel="stylesheet">
         <link href="includes/css/dialogs.css" rel="stylesheet">
         
         <!-- Bootstrap core CSS -->
@@ -31,26 +31,28 @@
 	
     <body>
     	
-        <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="javascript:void(0);">STARBUCKS</a>
+                </div>
+            </div>
+        </nav>
+        
+    	<div class="container">
+        	
+        	<div class="alert alert-danger">
+            	<p>We're sorry but there is an error occured.</p>
+                <p>It's either you've cancelled the payment, or there is connection problem.</p>
+                <p>If you didn't cancel your payment, kindly check your connection and retry your payment from the <a href="purchase.html" class="alert-link">purchasing page</a>.</p>
+            </div>
             
-            <form class="form-signin" role="form" id="form-signin" autocomplete="off">
-            	
-				<h3 class="form-signin-heading text-center"><img src="images/logo.png" /></h3>
-                
-                <div class="form-group">
-                    <input name="username" id="username" type="text" class="form-control" placeholder="Username" required autofocus>
-              </div>
-                
-                <div class="form-group">
-                	<input name="password" id="password" type="password" class="form-control" placeholder="Password" required>
-              </div>
-                
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                
-            </form>
+            <hr />
+            <button type="button" class="btn btn-default btn-lg btn-block" onClick="window.location.href='main-page.html';">Main Page <span class="glyphicon glyphicon-chevron-right"></span></button>
+            <button type="button" class="btn btn-default btn-lg btn-block" onClick="logout();">Sign Out <span class="glyphicon glyphicon-chevron-right"></span></button>
             
         </div>
-        
+		
         <!-- Dialogs -->
         <div class="modal fade" id="AppDialogs" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myDialogs" aria-hidden="true">
         	<div class="modal-dialog">
@@ -84,45 +86,16 @@
             </div>
         </div>
         
-        <script src="cordova.js" type="text/javascript"></script>
+		<script src="cordova.js" type="text/javascript"></script>
         <script src="includes/js/jquery-1.11.0.min.js" type="text/javascript"></script>
         <script src="includes/js/jquery.validate.min.js" type="text/javascript"></script>
         <script src="includes/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         
         <script src="includes/js/glob-func-closeApp.js"></script>
+        <script src="includes/js/glob-func-logout.js"></script>
+        <script src="includes/js/numeral/numeral.js"></script>
         
-        <script src="includes/js/index-form-signin.js"></script>
-        <script src="includes/js/index-submit-signin.js"></script>
-        
-		<script type="text/javascript">
-			// this is for the LaunchMyApp plugin
-			function handleOpenURL(url) {
-				
-				function GetURLParameter(sParam){
-					var sPageURL = url.substring(15);
-					var sURLVariables = sPageURL.split("&");
-					for(var i=0; i < sURLVariables.length; i++){
-						var sParameterName = sURLVariables[i].split("=");
-						if(sParameterName[0] == sParam){
-							return sParameterName[1];
-						}
-					}
-				}
-				
-				var topup_id		=	GetURLParameter("id");
-				var topup_refs		=	GetURLParameter("refs");
-				var topup_status	=	GetURLParameter("success");
-				
-				setTimeout(function() {
-					if(topup_status == 1){
-						window.location.href = "top-up-success.html";
-					}else{
-						window.location.href = "top-up-failed.html";
-					}
-				}, 0);
-				
-			}
-        </script>
+        <script src="includes/js/topup-main.js"></script>
         
     </body>
     
